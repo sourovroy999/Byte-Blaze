@@ -10,7 +10,7 @@ const Content = () => {
     const {cover_image, title, description, published_at,tags,body_html, id}=blog
 
     return (
-        <div className=" mx-auto p-2  group border border-gray-200  focus:no-underline dark:bg-gray-50 dark:bg-gray-50">
+        <div className=" mx-auto p-4  group border border-gray-200  focus:no-underline dark:bg-gray-50 dark:bg-gray-50">
         <img role="presentation" className="object-cover mb-5 w-full rounded h-44 " src={cover_image || placeholderimage}/>
         {
                         tags.map((tag =>

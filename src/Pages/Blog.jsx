@@ -5,9 +5,16 @@ import { Link, Outlet, useLoaderData } from 'react-router-dom';
 
 const Blog = () => {
     const [tabIndex, setTabIndex] = useState(0)
+
+ 
+
+
     const blog = useLoaderData()
 
     const { comments_count, title, reading_time_minutes, public_reactions_count, published_at, tags } = blog;
+
+    
+
     return (
         <div className="max-w-3xl py-16 mx-auto space-y-12">
             <article className="space-y-8 dark:bg-gray-100 dark:text-gray-900">

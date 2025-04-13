@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import placeholderimage from '../assets/404.jpg'
+import Markdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 
 const Content = () => {
     const blog=useLoaderData()
-    const {cover_image, title, description, published_at,tags, id}=blog
+    const {cover_image, title, description, published_at,tags,body_html, id}=blog
 
     return (
         <div className=" mx-auto p-2  group border border-gray-200  focus:no-underline dark:bg-gray-50 dark:bg-gray-50">
@@ -17,10 +19,11 @@ const Content = () => {
 
                             </a>))
                     }
-        <div className="p-6 space-y-2">
+        <div className="mt-4 space-y-2">
             <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{title}</h3>
-            <span className="text-xs ">{new Date(published_at).toLocaleDateString()}</span>
-            <p>{description}</p>
+
+          <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
+           
         </div>
     </div>
     );

@@ -4,7 +4,9 @@ import Nav from '../Components/Nav'
 const Home = () => {
     return (
         <div>
-            <Nav></Nav>
+           <div className='h-16'>
+           <Nav></Nav>
+           </div>
             <h1>Homepage</h1>
         </div>
     );

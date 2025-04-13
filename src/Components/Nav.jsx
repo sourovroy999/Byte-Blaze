@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const Nav = () => {
 
@@ -19,22 +20,21 @@ const Nav = () => {
         }
     }
 
-    console.log(theme);
     
 
     return (
 
-       
-
-        <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
+         <div className="navbar bg-base-100 shadow-lg px-4 sm:px-8 fixed z-10">
             <div className="flex-1">
-                <a className="btn btn-ghost gap-0 text-secondary normal-case text-2xl">Byte <span className='text-primary'>Blaze</span></a>
+                <Link to='/' className="btn btn-ghost gap-0 text-secondary normal-case text-2xl">Byte<span className='text-primary'>Blaze</span></Link>
             </div>
-            <div className="flex-none">
-                <ul className="menu menu-horizontal px-1 font-bold">
-                    <li><a>Home</a></li>
-                    <li><a>Blogs</a></li>
-                    <li><a>Bookmarks</a></li>
+            <div className="flex-none gap-6">
+                <ul className="menu menu-horizontal gap-6 px-1 font-bold">
+                    <NavLink to='/' className={({isActive})=>isActive?'text-primary font-bold': 'font-bold' }>Home</NavLink>
+                    <NavLink to='blogs' className={({isActive})=>isActive?'text-primary font-bold': 'font-bold' }>Blogs</NavLink>
+                    <NavLink to='/bookmarks' className={({isActive})=>isActive?'text-primary font-bold': 'font-bold' }>Bookmarks</NavLink>
+
+
 
 
                 </ul>

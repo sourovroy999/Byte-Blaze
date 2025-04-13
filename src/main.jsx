@@ -25,8 +25,9 @@ const router=createBrowserRouter([
         loader:()=> fetch('https://dev.to/api/articles?per_page=100&top=7')
       },
       {
-        path:'./blog/:id',
+        path:'/blog/:id',
         element:<Blog/>,
+        loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`)
       },
       
       {
